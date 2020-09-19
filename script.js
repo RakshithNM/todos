@@ -69,7 +69,7 @@ var app = new Vue({
         let countCompletedArray = this.todos.filter((todo) => {
           return todo.completed;
         });
-        return countCompletedArray.length === 0;
+        return countCompletedArray.length === 0 || countCompletedArray.length === this.todos.length;
       }
       else {
         return true;
@@ -80,7 +80,7 @@ var app = new Vue({
         let countUnCompletedArray = this.todos.filter((todo) => {
           return !todo.completed;
         });
-        return countUnCompletedArray.length === 0;
+        return countUnCompletedArray.length === 0 || countUnCompletedArray.length === this.todos.length;
       }
       else {
         return true;
