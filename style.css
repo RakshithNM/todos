@@ -83,3 +83,15 @@ button {
   color: black;
   width: 300px;
 }
+
+@media (min-width: 768px) {
+  input[type="text"] {
+    width: 650px;
+  }
+  ul {
+    width: 650px;
+  }
+  ul > li {
+    width: 650px;
+  }
+}
