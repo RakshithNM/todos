@@ -65,18 +65,26 @@ var app = new Vue({
   },
   computed: {
     disableShowCompleted() {
-      let countCompletedArray = this.todos.filter((todo) => {
-        return todo.completed;
-      });
-      console.log(countCompletedArray.length);
-      return countCompletedArray.length === 0;
+      if(this.todos) {
+        let countCompletedArray = this.todos.filter((todo) => {
+          return todo.completed;
+        });
+        return countCompletedArray.length === 0;
+      }
+      else {
+        return true;
+      }
     },
     disableShowUnCompleted() {
-      let countUnCompletedArray = this.todos.filter((todo) => {
-        return !todo.completed;
-      });
-      console.log(countUnCompletedArray.length);
-      return countUnCompletedArray.length === 0;
+      if(this.todos) {
+        let countUnCompletedArray = this.todos.filter((todo) => {
+          return !todo.completed;
+        });
+        return countUnCompletedArray.length === 0;
+      }
+      else {
+        return true;
+      }
     }
   }
 });
