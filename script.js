@@ -3,7 +3,8 @@ var app = new Vue({
   data: {
     todo: '',
     todos: [],
-    filteredTodos: []
+    filteredTodos: [],
+    activeButton: "showall"
   },
   methods: {
     onSubmit() {
@@ -35,6 +36,7 @@ var app = new Vue({
       localStorage.setItem("todos", JSON.stringify(this.todos));
     },
     showCompleted() {
+      this.activeButton = "completed";
       this.filteredTodos = this.todos;
       this.filteredTodos = this.filteredTodos.filter((todo) => {
         return todo.completed;
@@ -42,6 +44,7 @@ var app = new Vue({
       //this.filteredTodos = this.todos;
     },
     showUnCompleted() {
+      this.activeButton = "uncompleted";
       this.filteredTodos = this.todos;
       this.filteredTodos = this.filteredTodos.filter((todo) => {
         return !todo.completed;
@@ -49,6 +52,7 @@ var app = new Vue({
       //this.filteredTodos = this.todos;
     },
     showAll() {
+      this.activeButton = "showall";
       this.filteredTodos = this.todos;
     },
     guid() {

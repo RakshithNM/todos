@@ -68,6 +68,11 @@ small {
   opacity: 0.1;
 }
 
+.active {
+  background-color: orangered;
+  color: white;
+}
+
 button {
   margin-top: 10px;
   padding: 0.5rem;

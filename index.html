@@ -24,9 +24,9 @@
       </form>
       <small>Type and press enter to create</small>
       <small>Right click(long press on mobile) to delete</small>
-      <button v-on:click="showCompleted" :class="{ disable: disableShowCompleted }">Show completed</button>
-      <button v-on:click="showUnCompleted" :class="{ disable: disableShowUnCompleted }">Show uncompleted</button>
-      <button v-on:click="showAll">Show all</button>
+      <button v-on:click="showCompleted" :class="{ disable: disableShowCompleted, active: activeButton == 'completed' }">{{ activeButton == "completed" ? "Showing completed" : "Show completed" }}</button>
+      <button v-on:click="showUnCompleted" :class="{ disable: disableShowUnCompleted, active: activeButton == 'uncompleted' }">{{ activeButton == "uncompleted" ? "Showing uncompleted" : "Show uncompleted" }}</button>
+      <button v-on:click="showAll" :class="{ active: activeButton == 'showall' }">{{ activeButton == "showall" ? "Showing all" : "Show all"}}</button>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="script.js"></script>
