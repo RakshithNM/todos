@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A simple todos app">
+    <meta name="author" content="Rakshith Bellare">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <title>TODOS</title>
+  </head>
+  <body>
+    <main id="app">
+      <h1>TODOS</h1>
+      <form id="form" v-on:submit.prevent="onSubmit">
+        <input type="text" placeholder="Enter your todo" v-model="todo">
+        <ul>
+          <li @contextmenu.prevent="deleteTodo(todo.id)" v-for="todo in filteredTodos">
+            <input v-on:click="toggleCompleted(todo.id)" type="checkbox" id="checkbox" v-model="todo.completed">
+            <p :class="{ completed: todo.completed }">{{ todo.text }}</p>
+          </li>
+        </ul>
+      </form>
+      <small>Type and press enter to create todo</small>
+      <small>Right click to delete todo</small>
+      <button v-on:click="showCompleted" :class="{ disable: disableShowCompleted }">Show completed</button>
+      <button v-on:click="showUnCompleted" :class="{ disable: disableShowUnCompleted }">Show uncompleted</button>
+      <button v-on:click="showAll">Show all</button>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
