@@ -7,7 +7,7 @@ var app = new Vue({
   },
   methods: {
     onSubmit() {
-      this.filteredTodos.push({
+      this.filteredTodos.unshift({
         "id": this.guid(),
         "text": this.todo,
         "completed": false
