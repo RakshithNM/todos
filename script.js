@@ -60,8 +60,8 @@ var app = new Vue({
   },
   mounted() {
     let todos = JSON.parse(localStorage.getItem("todos"));
-    this.filteredTodos = todos;
-    this.todos = todos;
+    this.filteredTodos = todos || [];
+    this.todos = todos || [];
   },
   computed: {
     disableShowCompleted() {
