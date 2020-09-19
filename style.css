@@ -45,6 +45,7 @@ ul > li {
   border-bottom: 1px solid white;
   display: flex;
   align-items: center;
+  user-select: none;
 }
 
 ul > li > p {
