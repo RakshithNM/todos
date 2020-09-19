@@ -48,6 +48,8 @@ ul > li {
 }
 
 ul > li > p {
+  overflow: auto;
+  white-space: nowrap;
   margin: 0;
   padding-left: 20px;
   text-overflow: ellipsis;

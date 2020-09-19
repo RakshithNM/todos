@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A simple todos app">
     <meta name="author" content="Rakshith Bellare">
     <link rel="shortcut icon" href="favicon.png">
@@ -22,8 +22,8 @@
           </li>
         </ul>
       </form>
-      <small>Type and press enter to create todo</small>
-      <small>Right click to delete todo</small>
+      <small>Type and press enter to create</small>
+      <small>Right click(long press on mobile) to delete</small>
       <button v-on:click="showCompleted" :class="{ disable: disableShowCompleted }">Show completed</button>
       <button v-on:click="showUnCompleted" :class="{ disable: disableShowUnCompleted }">Show uncompleted</button>
       <button v-on:click="showAll">Show all</button>
