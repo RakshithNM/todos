@@ -16,8 +16,8 @@
       <form id="form" v-on:submit.prevent="onSubmit">
         <input type="text" placeholder="Enter your todo" v-model="todo">
         <ul>
-          <li @contextmenu.prevent="deleteTodo(todo.id)" v-for="todo in filteredTodos">
-            <input v-on:click="toggleCompleted(todo.id)" type="checkbox" id="checkbox" v-model="todo.completed">
+          <li @contextmenu.prevent="deleteTodo(todo.id)" v-on:click="toggleCompleted(todo.id)" v-for="todo in filteredTodos">
+            <input type="checkbox" id="checkbox" v-model="todo.completed">
             <p :class="{ completed: todo.completed }">{{ todo.text }}</p>
           </li>
         </ul>
